@@ -1,0 +1,1 @@
+Web is a PHP-boilerplate/framework for small websites. Web was built byfrsd14@student.bth.se as part of teaching web programming and published in june 2013 as an article at http://dbwebb.se/kunskap (swedish). It was also published at GitHub: https://github.com/mosbth/Web-base.
