@@ -1,3 +1,3 @@
-<img class='sitelogo' src='<?=$this->url->asset("img/anax.png")?>' alt='Anax Logo'/>
-<span class='sitetitle'><?=isset($siteTitle) ? $siteTitle : "Aler phpmvc"?></span>
-<span class='siteslogan'><?=isset($siteTagline) ? $siteTagline : "Detta är en enkel slogan"?></span>
+<img class='sitelogo' src='<?=$this->url->asset("img/mo.png")?>' alt='Moon'/>
+<span class='sitetitle'><?=isset($siteTitle) ? $siteTitle : "Fredriks me-sida i PHPMVC"?></span>
+<span class='siteslogan'><?=isset($siteTagline) ? $siteTagline : "Nu ska jag gräva i MVC"?></span>

@@ -41,13 +41,6 @@ color: #000000;
   border-color: #666;
   background-color: #ddd;
 } 
- 
-.navbar li.selected-parent, 
-.navbar li.selected {
-  border-color: #222;
-  color: #000000;
-}
-
 .navbar ul ul {
   background-color: #fff; 
   padding: 2px 6px 2px 0; 

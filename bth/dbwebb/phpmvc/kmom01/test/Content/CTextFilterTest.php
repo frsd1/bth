@@ -20,8 +20,8 @@ class CTextFilterTest extends \PHPUnit_Framework_TestCase
     {
         $tf = new \Anax\Content\CTextFilter();
 
-        $html = "hi\nhi";
-        $expected = "hi<br />\nhi";
+        $html = "\n";
+        $expected = "<br />\nhi";
         $res = $tf->doFilter($html, 'nl2br');
         $this->assertEquals($expected, $res, "Filter nl2bt failed.");
     }
