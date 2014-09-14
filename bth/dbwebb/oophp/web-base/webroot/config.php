@@ -57,7 +57,7 @@ $web['header'] = <<<EOD
 EOD;
 
 $web['footer'] = <<<EOD
-<footer><span class='sitefooter'>Fredrik Stenberg | frsd14@student.bth.se | <a href='https://github.com/frsd1/oophp'>Web på GitHub</a> | <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a></span></footer>
+<footer><span class='sitefooter'>Fredrik Stenberg | frsd14@student.bth.se | <a href='https://github.com/frsd1/bth/tree/master/bth/dbwebb'>Web-base på GitHub</a> | <a href='http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance'>Unicorn</a></span></footer>
 EOD;
 
 
@@ -68,7 +68,7 @@ EOD;
  */
 //$web['stylesheet'] = 'css/style.css';
 $web['stylesheets'] = array('css/style.css');
-$web['favicon']    = 'ficon.ico';
+$web['favicon']    = 'favicon.ico';
 
 
 
