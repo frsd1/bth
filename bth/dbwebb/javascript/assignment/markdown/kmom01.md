@@ -9,7 +9,7 @@ Efter att läst den rekommenderade kurslitteraturen började jag arbeta mig igen
 *  [Ändra storlek på div-element](http://www.student.bth.se/~frsd14/javascript/assignment/resize/) 
 *  [saltomortal](http://www.student.bth.se/~frsd14/javascript/assignment/saltomortal/)
 
-För att få baddie att snurra på sig fick jag ändra i css-filen och jag använde mig av en annan figur, popellorhead.  
+För att få baddie att snurra runt i en volt eller en saltomortal fick jag ändra i filen style.less och och i javascript-filen  jag använde mig av en annan figur, popellorhead.  
 
 
 
