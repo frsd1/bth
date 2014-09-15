@@ -4,10 +4,10 @@
  */
 $(document).ready(function(){
   'use strict';
-		document.getElementById('headtext').innerHTML = 'Javascript-programmering - Fredrik Stenberg';
+	document.getElementById('headtext').innerHTML = 'Javascript-programmering - Fredrik Stenberg';
 	
-  var t1 = document.getElementById('b1'),
-    t2 = document.getElementById('b2'),
+  	var t1 = document.getElementById('b1'),
+	t2 = document.getElementById('b2'),
     t3 = document.getElementById('b3'),
     t4 = document.getElementById('b4'),
     t5 = document.getElementById('b5'),

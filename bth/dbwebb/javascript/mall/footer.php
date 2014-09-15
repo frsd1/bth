@@ -43,6 +43,9 @@
   <a href='http://developer.apple.com/library/safari/navigation/'>Apple DN</a>  
   <a href='http://www.w3schools.com/'>w3schools</a>
 </nav>
+
+<script src="js/mos.js"></script>
+<script src="js/main.js"></script>
 </footer>
 
 </body>

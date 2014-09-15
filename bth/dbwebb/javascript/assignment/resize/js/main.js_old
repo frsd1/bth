@@ -2,7 +2,7 @@
 			var a=0;
 
 			window.onload = function Start() {
-				document.getElementById('headtext').innerHTML = '	document.getElementById('headtext').innerHTML = 'Javascript-programmering - Fredrik Stenberg';
+				document.getElementById('headtext').innerHTML = 'Fred Flinstone';
 				home();
 			
 			}
