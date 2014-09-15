@@ -21,8 +21,12 @@ $web['main'] = <<<EOD
 <article class="readable">
 <h1>Om Mig</h1>
 
-<p>Jag heter Fredrik Stenberg och bor i Stockholm eller närmare bestämt i Solna strax utanför. Jag har arbetat med ekonomi och programmering. Att läsa på distans har jag gjort tidigare och det passar mig bra eftersom jag tycker man enklare kan fokuser på ämnet. Speciellt då man studerar programmering. När jag har tid över busar jag med mina barn och min vackra sambo, därefter är dagen oftas slut. När det gäller programmering har jag läst en hel del java men även .net-relaterade programspråk såsom C#, vb, javascript. Jag arbetar i helt enkelt i Visual Studio men även i utvecklingsmiljön för Android, Eclipse.
-
+<p>Mitt namn är Fredrik Stenberg och jag bor i Stockholm eller närmare bestämt i Solna strax utanför. Jag har arbetat med ekonomi men nu med programmering. I Stockholm är jag uppväxt och här har jag även arbetat och studerat. Att läsa på distans har jag gjort tidigare och det passar mig bra eftersom jag tycker man enklare kan fokuser på ämnet. Speciellt då man studerar programmering.<br> När jag har tid över busar jag med mina barn och min vackra sambo, därefter är dagen oftas slut. Finns det tid över försöker jag hinna med att träna löpning och när det finns snö i Stockolm tränar jag gärna längdåkning.<br> 
+Vad beträffar programmering har jag studerat en hel del java på KTH men även .net-relaterade programspråk såsom C#, vb, javascript. Jag har arbetat med utveckling av webplatser i Visual Studio och för utveckling i Android i Eclipse. Sedan flera år tillbaka arbetar jag även i Linuxmiljö, för tillfället i Ubuntu. Eftersom kurserna på dbwebb har sin tyngdpunkt i fri programvara hoppas jag att mina erfarenheter i Linux ska vara till hjälp för mig.
+<br><br>
+Jag hoppas på en höst med många nya lärdommar inom webutveckling.
+<br>
+/Fredrik
 </p>
 <div class="circular"><img src="img/me.jpg" alt="" /></div>
 
