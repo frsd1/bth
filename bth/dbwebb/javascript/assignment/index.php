@@ -1,8 +1,6 @@
 <?php $title='BTH - Javascript - Kursmoment 1'; include(__DIR__ . '/../mall/header.php'); ?>
     <script src="http://cdn.sencha.io/try/extjs/4.0.7/ext-all.js"></script>
     <script src="js/Markdown.Converter.js"></script>
-		<script src="js/menu.js"></script>
-
 		
 <div id="menu"></div>
 

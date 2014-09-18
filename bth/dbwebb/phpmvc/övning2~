@@ -1,0 +1,20 @@
+Kommentarer till övning 2 mvcphp
+Ladda ner en ny version av anax
+git clone https://github.com/mosbth/Anax-MVC.git
+
+Hämtar hem phpmvc-comment
+git clone git://github.com/mosbth/phpmvc-comment.git
+
+Gå till phpmvc och 
+vi composer.json
+
+{
+    "require": {
+        "phpmvc/comment": "dev-master"
+    }
+}
+
+cd Anax-MVC
+composer validate
+composer install --no-dev
+
