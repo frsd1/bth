@@ -12,6 +12,13 @@ $web['title'] = "Redovisning";
 
 $web['main'] = <<<EOD
 <article class="readable">
+<div id='m1' class='flash'>
+<p id='text' class='black'>Hi this text should be replaced when page and DOM is loaded.</p>
+</div>
+
+<div id='m2' class='flash'>
+<p id='text' class='black'>M is loaded.</p>
+</div>
 <h1>Redovisning av kursmomenten</h1>
 
 <h2>Kursmoment 1: Kom igång med Objektorienterad PHP</h2>

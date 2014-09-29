@@ -1,0 +1,105 @@
+/**
+ * Import base style
+ */
+@import "base.less";
+ 
+/**
+ * Here comes specific style for a certain test program.
+ */
+
+div#flash{
+  width:768px;
+  height:768px;
+}
+
+.tiles{
+  width:32px;
+  height:32px;
+  float:left;
+}
+
+.tile10{
+  background:url("http://dbwebb.se/img/tiles/floor/grass_flowers_red3.png");
+}
+.tile11{
+  background:url("http://dbwebb.se/img/tiles/passage/dngn_open_door.png");
+}
+.tile15{
+  background:url("http://dbwebb.se//img/tiles/wall/dngn_mirrored_wall.png");
+}
+.tile16{
+  background:url("http://dbwebb.se/img/tiles/wall/crystal_wall02.png");
+}
+.tile18{
+  background:url("http://dbwebb.se//img/tiles/wall/brick_brown-vines1.png");
+}
+
+/** --------------------------------------------------------------
+ * Baddie from CSS sprite.
+ * 
+ */
+.baddieMove{cursor:pointer;width:32px;height:32px;background-image:url(img/sprite_minus.png);
+.transition(all,0.2s);
+}
+
+td{width:140px;} 
+/** --------------------------------------------------------------
+ * Baddie from CSS sprite.
+ * 
+ */
+#baddie{position:absolute;}
+
+.baddie{width:32px;height:32px;background-image:url(img/sprite_minus.png);
+  .transition-property(e('left,top'));.transition-duration(0.2s);.transition-timing-function(ease);
+  &.up{background-position:32px 0;}
+  &.down{background-position:64px 0px;}
+  &.left{background-position:96px 0;}
+  &.right{background-position:0 0;}
+}
+
+/** --------------------------------------------------------------
+ * Head.
+ * 
+ */
+
+#head 
+{
+background:#0055A4;
+color:#fff;
+margin: 0.1em 0em 0em 0em;
+padding: 0.1em 0.1em 0.1em 0.7em;
+text-align:left;
+height: 2.4em; 
+}
+/** --------------------------------------------------------------
+ * Menu.
+ * 
+ */
+
+#menu 
+{
+background:#EF4135;
+color:#ffffff;
+margin: 0.1em 0em 0em 0em;
+padding: 0.4em 0.4em 0.1em 0.4em;
+text-align:left;
+height: 2.9em;
+
+}
+
+a
+{
+  color: #776;
+}
+#headtext
+{
+margin: 0.1em 0em 0em 0em;
+padding: 0.1em 0.1em 0.1em 0.1em;
+font: 1.4em Tahoma, Helvetica, Arial, Sans-Serif;
+text-align: left;
+color: #fff;
+text-shadow: 1px 2px 3px #555;
+}
+
+
+

@@ -8,7 +8,9 @@
 <?php if(isset($inlinestyle)): ?><style><?=$inlinestyle?></style><?php endif; ?>
 <link rel='stylesheet' type='text/css' href='<?=$val?>'/>
 <?php endforeach; ?>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src='<?=$modernizr?>'></script>
+<script src='<?=$ma?>'></script>
 </head>
 <body>
   <div id='wrapper'>

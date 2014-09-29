@@ -1,0 +1,243 @@
+<?php
+/**
+ * Class for the Game Dice hundred.
+ *
+ */
+class GameManager {
+
+  /**
+   * Properties
+   *
+   */
+	private $faces;	
+	private $last;
+	private $name;
+	private $hand2;
+	
+	private $startgame=false;
+	private $sum=0;
+	private $rollOFdice=0;
+	private $number;
+
+	
+
+
+  	/**
+   	* Constructor
+   	*
+   	* @param int $faces the number of faces to use.
+   	*/
+  	public function __construct() {
+ 	  		//$_SESSION['hand'] = $hand;
+		// Start a named session
+		session_name('hundredgame');
+		session_start();
+		$hand2 = new CDiceHand(1);
+		$_SESSION['gameManager'] = $this;
+		//$_SESSION['rollOFdice'] =0;
+		//$_SESSION['name'] = 0;
+	}
+
+
+  	/**
+	* Destructor
+   	*
+   	*/
+	public function __destruct() {
+    	//echo __METHOD__;
+  	}
+  	/**
+   	* Roll the dice
+   	*
+   	*/
+  	public function Rollw() {
+	//	$hand2 = new CDiceHand(1);
+	//	$hand2->Roll();
+  	//	$_SESSION['hand2'] = $hand2;
+		//if(isset($_SESSION['rollOFdice']))
+		//	return $_SESSION['rollOFdice'];
+		return "22";
+	
+
+	}
+	/**
+   	* Roll of the dice
+   	*
+   	*/
+  	public function RollOFdice() {
+	//	$hand2 = new CDiceHand(1);
+	//	$hand2->Roll();
+  	//	$_SESSION['hand2'] = $hand2;
+	//	return rollOFdice;
+		if(isset($_SESSION['rollOFdice']))
+			return $_SESSION['rollOFdice'];
+	
+	}
+
+
+	/**
+   	* Init the dice
+   	*
+   	*/
+  	public function Roll() {
+		if(isset($_SESSION['hand2'])) {
+			$hand2 = ($_SESSION['hand2']);
+			$hand2->Roll();
+  			$_SESSION['hand2'] =$hand2;
+
+		}else{
+
+			$hand2 = new CDiceHand(1);
+			$hand2->Roll();
+	  		$_SESSION['hand2'] =$hand2;
+		}
+//		$_SESSION['rollOFdice'] = $_SESSION['rollOFdice'];
+		$nrOFrolls = $_SESSION['rollOFdice'];
+		$nrOFrolls++;
+		$_SESSION['rollOFdice'] =$nrOFrolls;
+
+//		$this->rollOfDice = $rollOFDice;
+//		$_SESSION['startGame'] = $startGame;
+//			if(isset($_SESSION['rollOFdice']))	
+	}
+	public function Rolled() {
+		//if(isset($_SESSION['hand2']))
+			//return $_SESSION['hand2'];
+		return "hello";
+	}
+	public function GetNumber() {
+		if(isset($_SESSION['hand2']))
+			$bib = ($_SESSION['hand2']);
+		//$sum+=$bib->GetTotal();
+		//($_SESSION['sum'])= $sum;
+
+	    return $bib->GetTotal();
+  	}
+	public function GetTotal() {
+	//	if(isset($_SESSION['hand2']))
+	//	$bib = $_SESSION['hand2'];
+	//    return $bib->GetRoundTotal();
+		//if(isset($_SESSION['sum']))
+	//		return $_SESSION['sum'];
+		$bib = ($_SESSION['hand2']);
+		return $bib->GetRoundTotal();
+  	}
+
+
+  	/**
+   	* Get the total from the last roll(s).
+   	*
+   	*/
+  	public function GetStart() {
+		return 	"<p>Skriv in ett namn, klicka på Start.</p>
+		<form method='post' action='dicehundred.php' >
+    		Namn: <input type='text' name='name' class='diceinput' >
+		<input type='submit' value='Start'  class='dicebutton'>
+    		</form>";
+  	}
+	/**
+   	* Get the total from the last roll(s).
+   	*
+   	*/
+  	public function GetText() {
+		return 	$this->Roll().$this->GetImage()."<br>Tärningen detta kast: ". 
+		$this->GetNumber()."<br>Summan i denna spelrundan är: ". $this->GetTotal(). 
+		"<br>Antalet kast: ". $this->RollOFdice()."<br>";
+  	}
+  	public function GetText2() {
+		$number = $this->GetNumber();
+		$name = $_SESSION['name'];
+		$_SESSION['name'] = $name;
+
+		if($number==1) {
+			$result = $this->GetTotal();
+			$result--;
+			$rollOFdice=$this->RollOFdice();
+			$rollOFdice--;
+			session_destroy();
+			$this->SetStartGame(False);
+  			//echo "Sessionen raderas, <a href='?'>starta om spelet</a>";
+			return "<br>Spelet avslutades eftersom du fick en etta. Du fick ". $result ." På ". $rollOFdice ."st kast"; 
+			//$gg=1;
+		
+		} 
+		if($number==29) {
+			session_destroy();
+			//echo "<br>Hurra Hurra Du fick hundra!(29)";
+			$this->SetStartGame(False);
+			return "<br>Hurra Hurra Du fick hundra!(29)";
+		}
+
+		else {
+			return "Name:". $this->GetName()."<br>";
+		}
+	}
+	public function GetText3() {
+
+		if(isset($_SESSION['name'])) {
+			if($this->GetStartGame()) {
+    				$name = $_SESSION['name'];
+				$_SESSION['name'] = $name;
+		
+		return "<p><a href='?roll'>Ett nytt kast!</a>&nbsp;&nbsp;<a href='?stop'>Stanna!</a></p><br><p><a href='?pause'>Pause!</a></p>";
+		}
+	}
+	
+
+	}	
+	public function GetText4() {
+
+		if(isset($_POST['name'])) {
+			$name=$_POST['name'];
+			if(strlen($name)>10) {
+				session_destroy();
+				return "Namnet är för långt!";			
+			} else if($name=="") {
+				session_destroy();
+				return "Du måste Skriva ett namn!";
+			} else {
+				$this->SetName($name);
+				$this->SetStartGame(True);
+    				$name = $_POST['name'];
+    				$_SESSION['name'] = $name;
+				return "Name:". $this->GetName() . "<p><a href='?roll'>Kasta tärningen!</a></p>";
+			}
+		} 
+	}
+	public function GetText5() {
+		if(!($this->GetStartGame())) {
+			return $this->GetStart();
+		}
+	}
+	public function SetName($name) {
+		$this->name = $name;
+		$_SESSION['name'] = $name;
+	}
+	public function GetName() {
+		if(isset($_SESSION['name']))
+			return $_SESSION['name'];
+	}
+	public function SetStartGame($startGame) {
+		$this->startGame = $startGame;
+		$_SESSION['startGame'] = $startGame;
+		$_SESSION['rollOFdice'] =0;
+	}
+	public function GetStartGame() {
+		if(isset($_SESSION['startGame']))
+			return $_SESSION['startGame'];
+	}
+	public function GetImage() {
+		if(isset($_SESSION['hand2']))
+		$bib = $_SESSION['hand2'];
+		return $bib->GetRollsAsImageList();
+
+	}
+	public function SaveValue() {
+
+	}
+	
+
+
+
+}
+

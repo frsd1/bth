@@ -1,0 +1,438 @@
+<?php
+/**
+ * @Filename: GameManager.php
+ * @Summery:This class acts as a manager between the user interface
+ *  and the class library.
+ *
+ * @course module 2 - Object oriented programming in php 
+ * @author Fredrik Stenberg, frsd14@student.bth.se
+ * @link https://github.com/frsd1/bth/tree/master/bth/dbwebb/oophp
+ */
+
+/**
+ * GameManager Class.
+ *
+ */
+class CGameManager {
+
+  	/**
+	 * Properties
+   	 *
+   	 */
+	private $name;
+	private $diceHand;
+	private $startgame=false;
+	private $sum=0;
+	private $rollOFdice=0;
+	private $number;
+	private $getStored;
+  	/**
+   	* Constructor 
+   	* Starting a session and instantiate a class, CDiceHand, to the object $diceHand. 
+   	*/
+  	public function __construct() {
+		session_start();
+	//	$diceHand = new CDiceHundred(1);
+	}
+  	/**
+	* Destructor
+   	*
+   	*/
+	public function __destruct() {
+    	//echo __METHOD__;
+  	}
+	public function Stop() {
+		return $this->GetStop(); 
+	}
+	public function Store() {
+		return $this->GetStoredInfo() . $this->GetCheckNumber(); 
+	}
+	public function RollDice() {
+		return $this->GetRollInfo() . $this->GetCheckNumber();
+	}
+	public function Output() {
+		return $this->GetRollDice() . $this->GetNameInput() . $this->GetStartMenu();
+	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	
+  	public function RollOFdice() {
+		if(isset($_SESSION['rollOFdice']))
+			return $_SESSION['rollOFdice'];	
+	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	*/
+  	public function SetStored() {
+		
+		if(isset($_SESSION['dice'])) {
+			$getStored =$_SESSION['dice'];	
+			$getStored->SetRoundStored();//=$getStored->GetTotal();
+			$_SESSION['dice'] = $getStored;	
+		}
+	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	*/
+  	public function GetStored() {
+	$getTotal = ($_SESSION['dice']);
+		return $getTotal->GetRoundStored();
+  	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	*/
+  	public function SetEnd() {
+		
+		if(isset($_SESSION['dice'])) {
+			$getStored =$_SESSION['dice'];	
+		//	$getStored->SetRoundStored();//=$getStored->GetTotal();
+			$getStored->SetEnd();//=$getStored->GetTotal();
+			$_SESSION['dice'] = $getStored;	
+		}
+	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	*/
+  	public function GetEnd() {
+	$getTotal = ($_SESSION['dice']);
+		return $getTotal->GetRoundStored();
+  	}
+
+
+	/**
+   	* Init the dice
+   	*
+   	*/
+  	public function Roll() {
+		if(isset($_SESSION['dice'])) {
+			$diceHand = ($_SESSION['dice']);
+			$diceHand->Roll();
+  			$_SESSION['dice'] = $diceHand;
+		}else{
+			$diceHand = new CDiceHundred(1);
+			$diceHand->Roll();
+	  		$_SESSION['dice'] = $diceHand;
+		}
+		//$nrOFrolls = $_SESSION['rollOFdice'];
+		//$nrOFrolls++;
+		//$_SESSION['rollOFdice'] =$nrOFrolls;
+		$this->SetRollOFDice();
+		//$diceHand = ($_SESSION['dice']);
+		//$diceHand-> = ($_SESSION['dice']);
+	}
+	public function GetNumber() {
+		if(isset($_SESSION['dice']))
+			$getNumber = ($_SESSION['dice']);
+	    return $getNumber->GetTotal();
+  	}
+	public function SetTotal() {
+		if(isset($_SESSION['dice'])) {
+			$getStored =$_SESSION['dice'];	
+			$getStored->InitRound();//=$getStored->GetTotal();
+			$_SESSION['dice'] = $getStored;	
+		}
+  	}
+	public function GetTotal() {
+		$getTotal = ($_SESSION['dice']);
+		return $getTotal->GetRoundTotal();
+  	}
+  	/**
+   	* Get the start information for the application
+   	*
+   	*/
+  	public function GetStart() {
+		return 	"
+<div id='start'><p>Skriv in ett namn, klicka på Spela.</p>
+		<form method='post' action='dicehundred.php' >
+    		Namn: <input type='text' name='name' class='diceinput' >
+		<input type='submit' value='Spela'  class='dicebutton'>
+    		</form>
+</div>
+
+";
+  	}
+	/**
+   	* Get information about roll(s) and store a sum.
+   	*
+   	*/
+  	public function GetStop() {
+		session_destroy();
+		//echo "<br>Hurra Hurra Du fick hundra!(29)";
+		$this->SetStartGame(False);
+		return "<br>Du tryckte på Stop. Vill du spela igen?";
+  	}
+	/**
+   	* Get information about roll(s) and store a sum.
+   	*
+   	*/
+  	public function GetEndInfo() {
+//		$this->SetStored();
+		$this->SetEnd();
+		return 	"<div id='game'><br>Tärningen detta kast: " . $this->GetNumber().
+			"<br>Summan i denna spelrundan är: ". $this->GetTotal(). 
+			"<br>Sparade värde: ". $this->GetStored(). 
+			"<br>Antalet kast: ". (($this->GetRollOFdice())-1)."<br>";
+  	}
+	/**
+   	* Get information about roll(s) and store a sum.
+   	*
+   	*/
+  	public function GetStoredInfo() {
+		$this->SetStored();
+		return 	"<div id='game'><br>Tärningen detta kast: " . $this->GetNumber().
+			"<br>Summan i denna spelrundan är: ". $this->GetTotal(). 
+			"<br>Sparade värde: ". $this->GetStored(). 
+			"<br>Antalet kast: ". $this->GetRollOFdice()."<br>";
+  	}
+	/**
+   	* Get information about roll(s).
+   	*
+   	*/
+  	public function GetRollInfo() {
+		$this->Roll();
+		return 	"<div id='game'>" . $this->GetImage() . "<br>Tärningen detta kast: " . 
+		$this->GetNumber() . "<br>Summan i denna spelrundan är: " . $this->GetTotal() . 
+		"<br>Sparade värde: ". $this->GetStored(). 
+		"<br>Antalet kast: ". $this->GetRollOFdice()."<br>";
+  	}
+	/**
+   	* Get information about roll(s).
+   	*
+   	*/  	
+  	public function GetCheckNumber() {
+		$number = $this->GetNumber();
+		//$name = $_SESSION['name'];
+		//$_SESSION['name'] = $name;
+/*
+		if($number==1) {
+			$result = $this->GetTotal();
+			$result--;
+			$rollOFdice=$this->RollOFdice();
+			$rollOFdice--;
+			$this->GetStoredInfo();
+			//session_destroy();
+			$this->SetStartGame(False);
+  			//echo "Sessionen raderas, <a href='?'>starta om spelet</a>";
+			return "<br>Spelet avslutades <b>".$this->GetName()."</b> eftersom du fick en etta. Ditt resultat blev <b>". $result ."</b> på ". $rollOFdice ." st kast</div>"; 
+			//$gg=1;
+		
+		} 
+*/
+		if($number==1) {
+			//$result = $this->GetTotal();
+			//$result--;
+			//$rollOFdice=$this->RollOFdice();
+			//$rollOFdice--;
+			//$this->GetStoredInfo();
+			//session_destroy();
+			//$this->SetStartGame(False);
+  			//echo "Sessionen raderas, <a href='?'>starta om spelet</a>";
+			//return "<br>Spelet avslutades <b>".$this->GetName()."</b> eftersom du fick en etta. Ditt resultat blev <b>". $result ."</b> på ". $rollOFdice ." st kast</div>"; 
+			//$gg=1;
+			$this->GetEndInfo();
+			return "<b>". $this->GetNamee()."</b> Du fick en etta! Det är bara att börja om.<br>";
+		
+		} 
+
+		if($number==100) {
+			session_destroy();
+			//echo "<br>Hurra Hurra Du fick hundra!(29)";
+			$this->SetStartGame(False);
+			return "<br>Hurra Hurra Du fick hundra!(100)";
+		}
+		if($number>30) {
+			session_destroy();
+			//echo "<br>Hurra Hurra Du fick hundra!(29)";
+			$this->SetStartGame(False);
+			return "Namn: <b>". $this->GetNamee()."</b><br>";
+		}
+
+		else {
+			return "Namn: <b>". $this->GetNamee()."</b><br>";
+		}
+	}
+	public function GetRollDice() {
+
+	//	if(isset($_SESSION['name'])) {
+			if($this->GetStartGame()) {
+    	//			$name = $_SESSION['name'];
+	//			$_SESSION['name'] = $name;
+		
+		return "<p><a href='?roll'>Ett nytt kast!</a>&nbsp;&nbsp;<a href='?store'>Spara poäng!</a>&nbsp;&nbsp;<a href='?stop'>Stop!</a></p></div>";
+		}
+	//}
+	
+
+	}	
+
+
+	public function GetNameInput() {
+
+		if(isset($_POST['name'])) {
+			$name=$_POST['name'];
+			if(strlen($name)>10) {
+				session_destroy();
+				return "Namnet är för långt!";			
+			} else if($name=="") {
+				session_destroy();
+				return "Du måste Skriva ett namn!";
+			} else {
+				//$namee = $_SESSION['dice'];
+		
+				$this->SetNamee($name);
+				//$this->SetName($name);
+				$this->SetStartGame(True);
+    	//			$name = $_POST['name'];
+    	//			$_SESSION['name'] = $name;
+				return "<div id='start'>Namn: <b>". $this->GetNamee()."</b>". "<p><a href='?roll'>Kasta tärningen!</a></p>";
+			}
+		} 
+	}
+/*
+	public function GetNameInput() {
+
+		$diceHand = new CDiceHundred(1);
+//		$diceHand->Roll();
+  		$_POST['dice'] = $diceHand;
+		$name=$_POST['name'];
+		
+		if(strlen($name)>10) {
+			session_destroy();
+			return "Namnet är för långt!";			
+		} else if($name=="") {
+			session_destroy();
+			return "Du måste Skriva ett namn!";
+		} else {
+			$this->SetNamee($name);
+			$this->SetStartGame(True);
+    			$name = $_POST['name'];
+    			$_SESSION['name'] = $name;
+			return "<div id='start'>Namn: <b>". $this->GetNamee()."</b>". "<p><a href='?roll'>Kasta tärningen!</a></p>";
+		}
+	} 
+*/
+
+
+	public function GetStartMenu() {
+		if(!($this->GetStartGame())) {
+			return $this->GetStart();
+		}
+	}
+/*
+	public function SetName($name) {
+		$this->name = $name;
+		$_SESSION['name'] = $name;
+	}
+	public function GetName() {
+		if(isset($_SESSION['name']))
+			return $_SESSION['name'];
+	}
+*/
+
+	/**
+   	* Set the Roll of the dice
+   	* 
+   	*/
+  	public function SetRollOFdice() {
+		if(isset($_SESSION['dice'])) {
+			$diceSession =$_SESSION['dice'];	
+		
+		$diceSession->SetRollOFdice();//=$getStored->GetTotal();
+		$_SESSION['dice'] = $diceSession;
+		}	
+	}
+	/**
+   	* Get the Roll of the dice
+   	* 
+   	*/
+  	public function GetRollOFdice() {
+		$getTotal = ($_SESSION['dice']);
+		return $getTotal->GetRollOFdice();
+	}
+	
+
+
+
+///////////////////////////
+	public function StTotal() {
+		if(isset($_SESSION['dice'])) {
+			$getStored =$_SESSION['dice'];	
+			$getStored->InitRound();//=$getStored->GetTotal();
+			$_SESSION['dice'] = $getStored;	
+		}
+  	}
+	public function GtTotal() {
+		$getTotal = ($_SESSION['dice']);
+		return $getTotal->GetRoundTotal();
+  	}
+////////////////////////////////
+
+	public function SetNamee($name) {
+			$diceHand = new CDiceHundred(1);
+		
+//			//(isset($_SESSION['dice'])) {
+			//$getStored =$_SESSION['dice'];	
+			$diceHand->SetName($name);//=$getStored->GetTotal();
+			$_SESSION['dice'] = $diceHand;	
+//		}
+	}
+
+	public function GetNamee() {
+		//$diceHand = new CDiceHundred(1);
+		//$diceHand->Roll();
+	//	$_SESSION['dice'] = $diceHand;
+		$diceHand = ($_SESSION['dice']);
+		return $diceHand->GetName();
+	}
+
+	public function SetStartGame($startGame) {
+		if(isset($_SESSION['dice'])) 
+			$diceSession =$_SESSION['dice'];
+		else
+			$diceSession = new CDiceHundred(1);	
+		
+		$diceSession->SetStartGame($startGame);//=$getStored->GetTotal();
+		$_SESSION['dice'] = $diceSession;
+	
+//		$diceHand = new CDiceHundred(1);
+		
+//			//(isset($_SESSION['dice'])) {
+			//$getStored =$_SESSION['dice'];	
+//			$diceHand->SetStartGame($startGame);//=$getStored->GetTotal();
+//			$_SESSION['dice'] = $diceHand;	
+	}
+	public function GetStartGame() {
+		if(isset($_SESSION['dice']))
+			$diceSession = ($_SESSION['dice']);
+		else
+			$diceSession = new CDiceHundred(1);	
+		
+		return $diceSession->GetStartGame();
+	}
+
+
+/*
+	public function SetStartGame($startGame) {
+		$this->startGame = $startGame;
+		$_SESSION['startGame'] = $startGame;
+	//	$_SESSION['rollOFdice'] =0;
+	}
+	public function GetStartGame() {
+		if(isset($_SESSION['startGame']))
+			return $_SESSION['startGame'];
+	}
+*/
+
+	public function GetImage() {
+		if(isset($_SESSION['dice']))
+		$bib = $_SESSION['dice'];
+		return $bib->GetRollsAsImageList();
+
+	}
+}
+

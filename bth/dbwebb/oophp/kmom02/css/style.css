@@ -1,0 +1,223 @@
+/**
+ * Main stylesheet
+ */
+@import url(links.css);
+
+/**
+ * General elements
+ */
+body {
+    color: #001;
+    font: 100.01%/1.375 arial, sans-serif;
+}
+
+/**
+ * Typography
+ */
+h1 {
+    border-bottom: 0px solid #ccc;
+    text-transform: uppercase;
+}
+
+/**
+ * Layout of the main page elements
+ */
+#wrapper {
+    margin: 0 auto;
+    width: 800px;
+    padding: 20px;
+}
+
+/**
+ * Layout for header
+ */
+#header {
+    position: relative;
+    margin-bottom: 44px;
+    height: 47px;
+}
+
+.sitetitle {
+    position: absolute;
+    top: 1px;
+    left: 57px;
+    font-size: 28px;
+}
+
+.siteslogan {
+    position: absolute;
+    top: 55px;
+    left: 7px;
+    font-style: italic;
+    color: #aaa;
+}
+
+/**
+ * Layout for navigation bar / menu
+ */
+.navbar {
+
+}
+.navbar a {background-color:#CCFFF5;color:#000000;padding:0.2em 0.2em 0.2em 0.2em;
+text-decoration:none;}
+.navbar a:hover {background-color:#00E6E6;color:#ffffff;padding:0.2em 0.2em 0.5em 0.2em}
+
+#navbar {
+background-color:#EFF3FB;
+font-family:
+Verdana;padding:0.5em;
+
+border-radius: 5px; 
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px; 
+border: 2px solid #888888;
+padding: 1em 1em 1em 1em;
+margin: 1em 1em 1em 1em;
+
+height: 17px;
+width: 300px;
+
+}
+
+/**
+ * Layout for main
+ */
+#main {
+    min-height: 20em;
+}
+
+.readable {
+    width: 72%;
+		padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 1.1px;
+    box-shadow: 1px 2px 2px 1px #888888;
+}
+
+/**
+ * Layout for footer
+ */
+#footer {
+    width: 430px;
+    padding-top: 1px;
+    padding-left: 1px;
+
+    margin-top: 6px;
+    border-top: 0.1px solid #ccc;
+}
+
+.sitefooter {
+  
+    color: #666;
+}
+
+.sitelogo {
+    width: 52px;
+    height: 37px;
+    box-shadow: 2px 2px 1px #888888;
+}
+
+/**
+ * Byline
+ */
+.byline {
+    border-top: 0px dashed #ccc;
+    font-style: italic;
+}
+
+
+/**
+ * Figure
+ */
+figure {
+
+}
+
+figcaption {
+
+}
+
+figure.right {
+    float: right;
+}
+
+ul {
+    list-style: none;
+    padding: 1em 1em 1em 1em;
+}
+
+/**
+ * CSS sprite for a dice with six faces.
+ *
+ */
+ul.dice {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/**
+ * Moment 2 - Dice css style
+ *
+ */
+ul.dice li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 px 0 0;
+  width: 32px;
+  height: 32px;
+  background: url(../img/dice-faces.jpg) no-repeat;
+}
+
+ul.dice li.dice-1 { background-position: -160px 0px; }
+ul.dice li.dice-2 { background-position: -128px 0px; }
+ul.dice li.dice-3 { background-position:  -96px 0px; }
+ul.dice li.dice-4 { background-position:  -64px 0px; }
+ul.dice li.dice-5 { background-position:  -32px 0px; }
+ul.dice li.dice-6 { background-position:    0px 0px; }
+
+/**
+ * Moment 2 - Dice 
+ * 
+ */
+#start {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #888888;
+	padding: 1em 1em 1em 1em;
+	margin: 1em 1em 1em 1em;
+	height:88px;
+    	width:300px;
+    	background-color: #6495ed;
+}
+/**
+ * Moment 2 - Dice 
+ * 
+ */
+#start2 {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #888888;
+	padding: 1em 1em 1em 1em;
+	margin: 1em 1em 1em 1em;
+	height:100px;
+    	width:300px;
+    	background-color: #6495ed;
+}
+#game {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #888888;
+	padding: 1em 1em 1em 1em;
+	margin: 1em 1em 1em 1em;
+	height:366px;
+    	width:300px;
+    	background-color: #6495ed;
+}
+#playerbtn {
+	
+	margin: 0em 0em 0em 1em;
+}

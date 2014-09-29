@@ -1,0 +1,18 @@
+Kursmoment 2 - Objektorienterad programmering i php.
+
+Sammanfattning
+
+Detta kursmoment var väldigt givande eftersom det var flera ny programmeringslösningar som inte riktigt fungerar så som jag är van vid, som till exempel i Android-Java. Java/C#/vb(asp.net) har jag programmerat i tidigare så jag känner till det objekt orienterade konceptet. Men eftersom webbsidan laddas om behöver man utnyttja $_session för objektet. Något som sker lite annorlunda i andra miljöer. 
+Jag hade stor användning av den rekommenderade övningen. Denna blev utgångspunkten till mitt program, tärningspelet 100. Den andra uppgiften kalendern startade jag på men får se det som något för kommande veckor. När övningen var avslutad började jag med att förändra koden så att den följer reglerna i tärningspelet 100. Därefter skapade jag en klass, CGameManager, som är den klass som pratar med användargränssnittet och med klassen CDiceHundred. I Användargränssnittet instansieras ett objekt av klassen CGameManager och därefter händer det mesta i klass CGameManager. Klassen CDiceHundred är en klass där information lagras och uträkning av ett kast sker. Användargränssnittet anropar return-funktioner ifrån CGameManager för att visa resultatet för användaren. Efter ett anrop ifrån användargränsnittet till CGamemanager placeras CGamemanager-objektet i en Sessionvariabel för att hämtas vid nästa anrop, då webbsidan ladda om. 
+Detta gav att programmerandet av CGameManager och CDiceHundred blev lite omständigt. Som jag förstår det är detta poängen med att placera allt i EN session-variabel. Vilket gör att skriver man ett större program blir det mer lätthanterligt när man endast hanterar olika objekt av sina klasser i session-variabler.
+
+
+Kursmoment 2 - Mvc
+
+filen theme.php för att sätta in en javascript fil
+
+
+
+Kursmoment 2 - Javascript
+
+

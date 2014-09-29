@@ -27,6 +27,7 @@ function myAutoloader($class) {
     throw new Exception("Classfile '{$class}' does not exists.");
   }
 }
+
 spl_autoload_register('myAutoloader');
 
 /**

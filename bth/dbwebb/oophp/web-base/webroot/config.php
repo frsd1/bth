@@ -76,6 +76,7 @@ $web['favicon']    = 'favicon.ico';
  * Settings for JavaScript.
  *
  */
+$web['ma'] = 'js/main.js';
 $web['modernizr'] = 'js/modernizr.js';
 $web['jquery'] = '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js';
 //$web['jquery'] = null; // To disable jQuery
