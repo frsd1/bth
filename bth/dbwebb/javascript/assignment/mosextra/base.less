@@ -46,7 +46,7 @@ audio:not([controls]){display:none;}
  */
 @font-family-helvetica: Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-monospace: monospace;
-@magic-number: 22px; /* 16px - 100%/1.375 */
+@magic-number: 16px; /* 16px - 100%/1.375 */
 body{color:#222;font:100.01%/1.375 @font-family-helvetica;}
 p{margin-bottom:@magic-number;}
 b,strong{font-weight:bold;}
@@ -54,7 +54,9 @@ i,em{font-style:italic;}
 pre,code{font:1em/1.375 @font-family-monospace;}
 
 /* headers */
-h1{font-size:2.375em;line-height:1.1579;margin-bottom:@magic-number;}
+h1{font-size:1.375em;line-height:1.1579;margin-bottom:@magic-number;}
+/* headers */
+h2{font-size:1.275em;line-height:1.1579;margin-bottom:@magic-number;}
 
 /* Lists */
 li ul,li ol{margin:0;}
@@ -192,21 +194,14 @@ tfoot{font-style:italic;}
  */
 body{max-width:940px;margin:8px auto;}
 
+
 /** --------------------------------------------------------------
  * Boxes.
  * 
  */
 @color:@greyLight;
-#flash{margin:2em auto;background-color:fadeout(@greyLighter,1%);min-height:10em;border:1px solid @greyLight;padding:1em;
+#flash{margin:2em auto;background-color:fadeout(@greyLighter,1%);min-height:1em;border:1px solid @greyLight;padding:1em;
 .border-radius(1px);.box-shadow(1px 1px 2px rgba(0,0,0,.2), 0px 0px 3px rgba(0,0,0,.1););}
-
-
-/** --------------------------------------------------------------
- * Boxes.
- * 
-
-#flash{margin:2em auto;background-color:fadeout(@greyLighter,5%);min-height:10em;border:1px solid @greyLight;padding:1em;
-.border-radius(10px);.box-shadow();}
 
 
 /** --------------------------------------------------------------

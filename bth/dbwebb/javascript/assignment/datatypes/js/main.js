@@ -6,9 +6,8 @@ $(document).ready(function(){
   var e1, i,
     rows = '',
     element = document.getElementById('text'),
-    numbers = [42, 4.2, 1.21e4, 1.12e-2, 0xff00ff];
+    numbers = [17, 1.7, 1.21e4, 1.12e-2, 0xff00ff];
 
-  console.log('Starting');
   element.className = 'black';
   element.innerHTML = '<b>Numbers - Datatypes and values</b>';
   e1 = document.createElement('table');

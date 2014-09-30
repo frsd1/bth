@@ -10,12 +10,11 @@
 	<button onclick="location ='../animate'">U6(animate)</button>
 	<button onclick="location ='../boulderdash'">U7(boulddash)</button>
 	<button onclick="location ='../roulette'">U8(roulette)</button>
+	<button onclick="location ='../mosextra'">U9(Ett par extra funk. i mos.js)</button>
 </div>		
 
 <div id='flash'>
     <div id='baddie' class="baddie down">
     </div>
 </div>
-
- 
 <?php $path=__DIR__; include(__DIR__ . '/../../mall/footer.php'); ?>

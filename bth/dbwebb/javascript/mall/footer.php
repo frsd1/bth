@@ -44,7 +44,7 @@
   <a href='http://www.w3schools.com/'>w3schools</a>
 </nav>
 
-<script src="js/mos.js"></script>
+<script src="../../mall/js/mos.js"></script>
 <script src="js/main.js"></script>
 </footer>
 

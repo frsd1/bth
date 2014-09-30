@@ -3,6 +3,38 @@
  *
  * @author Mikael Roos (me@mikaelroos.se)
  */
+/////////////////////////////////////////
+//Extra function in mos.js
+//Return a random number
+randomNr = function  (min, max) {
+	return Math.floor((Math.random() * (max+1-min)) + min);
+};
+//Get unix time
+function getUnixtime () {
+	var time = new Date().getTime();
+	return time;
+};
+//set time for start and stop. Return the difference
+var starttiming=true;
+var start=0;
+function setStartStop () {	
+	if(starttiming) {
+		start = new Date().getTime();
+		starttiming=false;
+		return "";
+	}
+	if(!starttiming) {
+		var stop = parseInt(new Date().getTime())-parseInt(start);
+		var date = new Date(stop);
+		var seconds = "0" + date.getSeconds();
+		starttiming=true;
+		return seconds+" Seconds";
+	}
+};
+/////////////////////////////////////////
+
+
+
 window.Mos = (function(window, document, undefined ) {
   var Mos = {};
 
@@ -160,3 +192,6 @@ window.Mos = (function(window, document, undefined ) {
   return Mos;
   
 })(window, window.document); 
+
+
+

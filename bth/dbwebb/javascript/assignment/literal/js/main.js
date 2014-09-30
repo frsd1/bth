@@ -7,7 +7,7 @@ $(document).ready(function(){
     	rows = '',
     	element = document.getElementById('text'),
     	literals = [22, 
-		    4.2, 
+		    2.2, 
 		    "hello world", 
 		    'hello world', 
 		    true, 

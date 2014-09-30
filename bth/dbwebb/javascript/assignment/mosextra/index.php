@@ -1,6 +1,5 @@
 <?php $title='BTH - Javascript - Uppgift'; include(__DIR__ . '/../../mall/header.php'); ?>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 <div>
 	<button onclick="location ='../'">Tillbaka</button>
 	<button onclick="location ='../literal'">U1(literal)</button>
@@ -14,9 +13,18 @@
 	<button onclick="location ='../mosextra'">U9(Ett par extra funk. i mos.js)</button>
 </div>		
 
-<div id='flash'>
-<p id='text' class='black'>Hi, hi this text should be replaced when page and DOM is loaded.</p>
+<div id='flash2'>
+<p>Click the button to trigger a function.</p>
+<button onclick="setRandomNr(1,4)">Click me</button>
+<p id="demo"></p>
 </div>
+
+<div id='flash3'>
+<p>Click the button to trigger a function.</p>
+<button onclick="timing()">Click me</button>
+<p id="timing"></p>
+</div>
+
 
  
 <?php $path=__DIR__; include(__DIR__ . '/../../mall/footer.php'); ?>
