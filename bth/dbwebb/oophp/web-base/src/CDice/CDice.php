@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * A CDice class to play around with a dice.
  *

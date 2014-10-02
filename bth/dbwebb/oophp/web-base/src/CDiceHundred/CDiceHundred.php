@@ -15,7 +15,7 @@ class CDiceHundred {
   	private $sumRound;
   	private $sumStored;
   	private $name;
-  	private $rollOFdice=1;
+  	private $rollOfDice=1;
   	private $startGame=false;
   	/**
    	 * Constructor
@@ -150,11 +150,11 @@ class CDiceHundred {
   	}
 
   	public function SetRollOFDice() {
-		$this->rollOFDice += 1;
+		$this->rollOfDice += 1;
 	}
   	public function GetRollOFDice() {
 		$sum = time();
-		return $this->rollOFDice;
+		return $this->rollOfDice;
   	}
 	/**
    	 * Get the accumulated sum of the round.

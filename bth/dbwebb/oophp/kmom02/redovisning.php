@@ -30,11 +30,22 @@ Avslutningsvis tycker jag att detta var väldigt lärorikt för mig och strulet 
 
 <h2>Kursmoment 2: Kom igång med Objektorienterad PHP</h2>
 
+
 <h2>Sammanfattning</h2>
+
 <p id='text' class='black'>
-Detta kursmoment var väldigt givande eftersom jag använde session för objekt, något jag inte gjort tidigare. För att lösa övningen fick man spara informationen ifrån sidorna i en _session-variabel.  Java/C#/vb har jag programmerat i  tidigare - android-java och .net ramverket - så jag känner till det objekt orienterade konceptet. <br> 
-Jag hade stor användning av den rekommenderade övningen. Denna blev utgångspunkten till mitt program, tärningspelet 100. Den andra uppgiften kalendern startade jag på men får se det som något för kommande veckor. När övningen var avslutad började jag med att förändra koden så att den följer reglerna i tärningspelet 100. Därefter skapade jag en klass, CGameManager, som är den klass som pratar med användargränssnittet och med klassen CDiceHundred. I Användargränssnittet instansieras ett objekt av klassen CGameManager och därefter händer det mesta i klass CGameManager. Klassen CDiceHundred är en klass där information lagras och den slumpmässiga uträkning av ett kast sker. Användargränssnittet anropar return-funktioner ifrån CGameManager för att visa resultatet för användaren.<br><br> Efter ett anrop ifrån användargränsnittet till CGamemanager placeras CGamemanager-objektet i en Sessionvariabel för att hämtas vid nästa anrop, då webbsidan ladda om. <br>
-Detta gav att programmerandet av CGameManager och CDiceHundred blev lite omständigt. Men som jag förstår det är detta poängen med att placera allt i EN session-variabel. Vilket gör att skriver man ett större program blir det mer lätthanterligt när man endast hanterar olika objekt av sina klasser i session-variabler.</p>
+Detta kursmoment var väldigt givande eftersom det var flera ny programmeringslösningar som inte riktigt fungerar så som jag är van vid, som till exempel i Android-Java. Java/C#/vb(asp.net) har jag programmerat i tidigare så jag känner till det objekt orienterade konceptet. Men eftersom webbsidan laddas om behöver man utnyttja _session för objektet. Något som sker lite annorlunda i andra miljöer.<br />
+Jag hade stor användning av den rekommenderade övningen. Denna blev utgångspunkten till mitt program, tärningspelet 100. Den andra uppgiften kalendern startade jag på men får se det som något för kommande veckor. När övningen var avslutad började jag med att förändra koden så att den följer reglerna i tärningspelet 100. Därefter skapade jag en klass, CGameManager, som är den klass som pratar med användargränssnittet och med klassen CDiceHundred.
+<br /><br />
+I Användargränssnittet instansieras ett objekt av klassen CGameManager och därefter händer det mesta i klass CGameManager. Klassen CDiceHundred är en klass där information lagras och uträkning av ett kast sker. Användargränssnittet anropar return-funktioner ifrån CGameManager för att visa resultatet för användaren. Efter ett anrop ifrån användargränsnittet till CGamemanager placeras CGamemanager-objektet i en Sessionvariabel för att hämtas vid nästa anrop, då webbsidan ladda om.<br />
+Detta gav att programmerandet av CGameManager och CDiceHundred blev lite omständigt. Som jag förstår det är detta poängen med att placera allt i EN session-variabel. Vilket gör att skriver man ett större program blir det mer lätthanterligt när man endast hanterar olika objekt av sina klasser i session-variabler.
+<br /><br /><br />
+För övrigt fick jag min första nybörjarsmocka som PHP-programmerare. Efter att jag skrivit färdigt allt på min lokala server fungerade allt som det var tänkt. Därefter flyttade jag koden till bth-servern och där kommer felmeddelandena.
+<br /><br />
+<b>Warning: session_start(): Cannot send session cache limiter - headers already sent .....</b>
+<br /><br />
+Jag började grotta i koden i några dagar till oigenkänlighet. Men felet var ett mellanslag innan <?php på rad ett i CDice. Så nu kan jag äntligen lämna in kursmoment 2
+</p>
 <ul>
 	<li><a href='./dicehundred.php'>Spelet hundra</a></li>
 </ul>

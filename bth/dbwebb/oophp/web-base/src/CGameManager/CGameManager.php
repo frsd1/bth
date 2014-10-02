@@ -31,7 +31,10 @@ class CGameManager {
    	* Starting a session and instantiate a class, CDiceHand, to the object $diceHand. 
    	*/
   	public function __construct() {
-		session_start();
+		if(!isset($_SESSION['dice'])) {
+			session_name('dice');
+			session_start();
+		}
 	}
   	/**
 	* Destructor

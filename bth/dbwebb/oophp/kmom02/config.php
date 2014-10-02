@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Config-file for Web. Change settings here to affect installation.
  *
@@ -33,7 +33,7 @@ include(WEB_INSTALL_PATH . '/src/bootstrap.php');
  * Start the session.
  *
  */
-session_name(preg_replace('/[:\.\/-_]/', '', __DIR__));
+//session_name(preg_replace('/[:\.\/-_]/', '', __DIR__));
 //session_start();
 
 

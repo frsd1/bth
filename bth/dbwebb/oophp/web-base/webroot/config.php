@@ -27,13 +27,12 @@ define('WEB_THEME_PATH', WEB_INSTALL_PATH . '/theme/render.php');
  */
 include(WEB_INSTALL_PATH . '/src/bootstrap.php');
 
-
 /**
  * Start the session.
  *
  */
-session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
-session_start();
+//session_name(preg_replace('/[^a-z\d]/i', '', __DIR__));
+//session_start();
 
 
 /**

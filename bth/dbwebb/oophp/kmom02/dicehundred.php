@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @Filename: GameManager.php
  * @Summery:This is a pagecontroller for the second course modules in Object oriented programming in php.
@@ -16,6 +16,28 @@
  */
 // Include the essential config-file which also creates the $web variable with its defaults.
 include(__DIR__.'/config.php'); 
+// Start a named session
+if(isset($_GET['destroy'])) {
+  // Unset all of the session variables.
+  $_SESSION = array();
+
+  // If it's desired to kill the session, also delete the session cookie.
+  // Note: This will destroy the session, and not just the session data!
+  if (ini_get("session.use_cookies")) {
+      $params = session_get_cookie_params();
+      setcookie(session_name(), '', time() - 42000,
+          $params["path"], $params["domain"],
+          $params["secure"], $params["httponly"]
+      );
+  }
+
+  // Finally, destroy the session.
+  session_destroy();
+  echo "Sessionen raderas, <a href='?'>starta om spelet</a>";
+  exit;
+}
+
+
 // Set title for the page
 $web['title'] = "Redovisning"; $main="";
 //Instantiate a object from the GameManager Class
