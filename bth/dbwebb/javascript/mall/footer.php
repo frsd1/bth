@@ -44,6 +44,7 @@
   <a href='http://www.w3schools.com/'>w3schools</a>
 </nav>
 
+<script src="../../mall/js/bthtemplate.js"></script>
 <script src="../../mall/js/mos.js"></script>
 <script src="js/main.js"></script>
 </footer>

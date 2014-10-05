@@ -4,14 +4,11 @@
  *
  */
 class CDiceImage extends CDice {
-
   /**
    * Properties
    *
    */
   const FACES = 6;
-
-
   /**
    * Constructor
    *
@@ -19,8 +16,6 @@ class CDiceImage extends CDice {
   public function __construct() {
     parent::__construct(self::FACES);
   }
-
-
   /**
    * Get the rolls as a serie of images.
    *
@@ -33,6 +28,4 @@ class CDiceImage extends CDice {
     $html .= "</ul>";
     return $html;
   }
-
-
 }

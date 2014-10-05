@@ -113,10 +113,5 @@ class CDice {
     }
     return substr($html, 0, strlen($html) - 2);
   }
-
-
-
-
-
 }
 

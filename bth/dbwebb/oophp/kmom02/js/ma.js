@@ -1,3 +1,4 @@
+/*
 var start=false;
 window.onload = function Start() {
 	document.getElementById("m2").style.display="none";
@@ -18,4 +19,17 @@ function showhide(i)
 	start=true;
 	}
 }
-
+*/
+$(document).ready(function(){
+  $("#oneform").show();
+  $("#twoform").hide();
+ 
+  $("#twoplayer").click(function(){
+    $("#oneform").hide();
+	  $("#twoform").show();
+  });
+	$("#oneplayer").click(function(){
+    $("#oneform").show();
+	  $("#twoform").hide();
+  });
+});

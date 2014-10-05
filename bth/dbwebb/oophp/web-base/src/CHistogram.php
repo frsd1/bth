@@ -4,13 +4,10 @@
  *
  */
 class CHistogram {
-
   /**
    * Properties
    *
    */
-
-
   /**
    * Print the histogram
    *
@@ -34,6 +31,4 @@ class CHistogram {
 
     return $html;
   }
-
-
 }
