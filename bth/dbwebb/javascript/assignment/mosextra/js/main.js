@@ -16,8 +16,25 @@ function test3() {
 	document.getElementById("test3").innerHTML = bthtemplate.random(1, 6);
 };
 function test4() {
-	document.getElementById("test4").innerHTML = bthtemplate.getUnixtime(1, 6);
+	document.getElementById("test4").innerHTML = bthtemplate.getUnixtime();
 };
+function test5() {
+	var af = fred@.se;
+//	document.getElementById("test5").innerHTML = bthtemplate.isEmail(af);
+alert(bthtemplate.isEmail("af"));
+};
+function test6() {
+//	document.getElementById("test5").innerHTML = bthtemplate.randomNr (1, 4);	
+//	alert(bthtemplate.al());
+//	alert(bthtemplate.[1, 2, 3].contains(2)); // => true
+
+ var cars = new Array(1,2,3);
+ var  cars = new Array("audi","volvo","bmw");
+	alert(bthtemplate.contains(cars,"sasb"));
+//	document.getElementById("test6").innerHTML = bthtemplate.contains(cars,"sasb");//bthtemplate.randomNr (1, 4);
+//	alert([1, 2, 3].bthtemplate.contains(2)); 
+};
+
 
 /*
 window.onload = function Start() {

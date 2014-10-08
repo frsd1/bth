@@ -7,7 +7,7 @@ $(document).ready(function(){
   var out,
     element = document.getElementById('text'),
     table = document.getElementById('table'),
-    button = document.getElementById('button'),
+    buttonRoulette = document.getElementById('buttonRoulette'),
     bet = document.getElementById('bet'),
     bankroll = document.getElementById('bankroll'),
     color = document.getElementById('color'),
@@ -62,7 +62,7 @@ $(document).ready(function(){
     return e.insertBefore(el, e.firstChild);
   };
   
-  button.addEventListener('click', function () {
+  buttonRoulette.addEventListener('click', function () {
     var current = out(log, '&ndash; Bet is ' + bet.value + ' spinning the wheel&hellip;'),
       times = 10, results, step = 0, animateSpinn;
     

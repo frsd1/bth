@@ -1,5 +1,12 @@
 Kursmoment 2 (kmom02)
 ====================================
- 
-Ej redovisad
+##Sammanfattning
+
+I detta moment fick jag verkligen titta djupt i Anax-mvc. Och titta igen eftersom det trassla till sig. Men först skulle man arbeta med Composer. För installationen av Composer använde jag mig av terminalfönstret enligt uppgiften. Därefter skedde installationen smidigt och enkelt. Sedan installerades och validerades phpmvc/comment. Den beskrivning som fanns för uppgiften var tillräcklig för installationen.<br /><br />
+Kommentatorsystemet kom enkelt på plats efter att jag genomfört början av uppgiften. Packagist var intressant att söka i och i dess enkla användargränssnitt hittar man många paket både stor och små som löser enkla kodningsproblem. Ett paket som jag ska försöka testa under kursmoment 4 är doctrine/orm, men det finns fler andra mindre som jag ska försöka implementera i Anax/mvc.
+För att få kommentatorsystemet på plats behövde jag titta i forumet eftersom jag hade svårt med att få kommentatorsystemet att fungera på enskilda sidor. Jag har läst igenom filstrukturen i mvc många gånger och skrivit upp flödet. Detta gav en större förståelse för mvc.<br />
+En vital del i mvc/php är session där objektet sparas så som jag förstår det. När det blev klart för mig hur detta fungerade i flödet blev det enklare att förstå hur dispatchar fungerar ihop med en controller när sidan laddas (frontcontroller laddas). Och att dispatchar kan kopplas samman med en enskilda routers. Detta gav en förklaring på hur kommentarer per router fungerade. Vilket gav ett fungerande kommentatorsystem där kopplingen mellan router och dispatcher ger en koppling till enskilda sidor.Detta blev en nyttig uppgift för att förstå mvc-systemet. Efter att skrivit kod med trait och studerat trait i mvc börjar det hela falla på plats.<br /> <br />
+Till sist implementerade jag gravatar och så att kommentarmenyn är stängd från början förutom kommentarsboxen. Klickar man på denna visas hela kommentarsystemet. Detta sker med hjälpa av en javascript/jquery kod. Kontroll av e-post och http adress sker med hjälp av html 5 komponenter för input. Detta finns inte i det ursprungliga phpmvc/comment paketet men är ett smidigt sätt för validering på clientsidan.
+<br />
+phpmvc/comment  är ett enkelt skelett som uppgiften skulle bygga vidare så svagheterna kan vara det som skulle lösas i uppgiften.
 

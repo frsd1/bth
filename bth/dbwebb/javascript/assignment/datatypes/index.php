@@ -1,5 +1,7 @@
 <?php $title='BTH - Javascript - Uppgift'; include(__DIR__ . '/../../mall/header.php'); ?>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<div id='menuAssignment2'></div>
+<!---
 <div>
 	<button onclick="location ='../'">Tillbaka</button>
 	<button onclick="location ='../literal'">U1(literal)</button>
@@ -12,7 +14,7 @@
 	<button onclick="location ='../roulette'">U8(roulette)</button>
 	<button onclick="location ='../mosextra'">U9(Ett par extra funk. i mos.js)</button>
 </div>		
-
+--->
 <div id='flash'>
 <p id='text' class='red'>Hi, hi this text should be replaced when page and DOM is loaded.</p>
 </div>

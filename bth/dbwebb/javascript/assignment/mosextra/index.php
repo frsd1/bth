@@ -25,6 +25,18 @@
 <p>Click the button to trigger a function.</p>
 <button onclick="test4()">Click me</button>
 <p id="test4"></p>
+
+
+<p>Is email tion.</p>
+<button onclick="test5()">Click me</button>
+<p id="test5"></p>
+
+<p>Array test.</p>
+<button onclick="test6()">Click me</button>
+<p id="test6"></p>
+
+
+
 </div>
 
  

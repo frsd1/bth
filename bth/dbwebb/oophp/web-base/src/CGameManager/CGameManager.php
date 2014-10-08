@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @Filename: GameManager.php
@@ -20,6 +21,8 @@ class CGameManager {
    *
    */
   private $name;
+  private $name1;
+  private $name2;
 	private $diceHand;
 	private $startgame=false;
 	private $sum=0;
@@ -34,6 +37,12 @@ class CGameManager {
 		if(!isset($_SESSION['dice'])) {
 			session_name('dice');
 			session_start();
+		}
+		if(!isset($_SESSION['dice1'])) {
+			session_name('dice1');
+		}
+		if(!isset($_SESSION['dice2'])) {
+			session_name('dice2');
 		}
 	}
   /**
@@ -65,11 +74,11 @@ class CGameManager {
 		return $this->GetRollInfo() . $this->GetCheckNumber();
 	}
 	/**
-   	 *
+   *
 	 * @return result, name and menu
 	 */		
 	public function output() {
-		return $this->GetRollDice() . $this->GetNameInput() . $this->GetStartMenu();
+		return  $this->GetNameInput() .$this->GetRollDice() . $this->GetStartMenu();
 	}
 	/**
    	* Set the Roll of the dice
@@ -159,11 +168,15 @@ class CGameManager {
    *
    */
   public function getStart() {
+/*
 		return 	"<div id='start'><p>Skriv in ett namn, klicka på Spela.</p>
 		<form method='post' action='dicehundred.php' >
     		Namn: <input type='text' name='name' class='diceinput' >
 		<input type='submit' value='Spela'  class='dicebutton'>
     		</form></div>";
+*/
+		$uIDiceHundred = new CUIDiceHundred();
+		return $uIDiceHundred->getStartOnePlayer();
   }
 
 	/**
@@ -218,7 +231,7 @@ class CGameManager {
 		$storedNumber = $this->GetStored();
 		if($number==1) {
 			$this->GetEndInfo();
-			return "<b>". $this->GetName()."</b> Du fick en etta! Det är bara att börja om.<br>";		
+//			return "<b>". $this->GetName()."</b> Du fick en etta! Det är bara att börja om.<br>";		
 		} 
 		if($storedNumber+$totalNumber==100) {
 			return "<br>Hurra Hurra Du fick hundra!!!!";
@@ -226,7 +239,7 @@ class CGameManager {
 		if($storedNumber+$totalNumber>100) {
 			return "<br>Hurra Hurra Du fick över hundra";
 		} else {
-			return "Namn: <b>". $this->GetName()."</b><br>";
+			return "Namn: <b>". $this->GetName1()."sdsf". $this->GetName2()."</b><br>";
 		}
 	}
 	public function getRollDice() {
@@ -240,8 +253,21 @@ class CGameManager {
             $name=$_POST['name'];
 						if($this->testName($name)) {
                 $this->SetName($name);
-                $this->SetStartGame(True);
-                return "<div id='start'>Namn: <b>". $this->GetName()."</b>". "<p><a href='?roll'>Kasta tärningen!</a></p>";
+                $this->SetStartGame(true);
+       //        return "<div id='start'>Namn: <b>". $this->GetName()."</b>". "<p><a href='?roll'>Kasta tärningen!</a></p>";
+            } 
+						else {
+				    	session_destroy();
+              return "Namnet är för långt! Eller inget alls, max 10 tecken.";            
+						}
+        }
+  			if(isset($_POST['name1']) && isset($_POST['name2'])) {
+            $name1=$_POST['name1'];
+						$name2=$_POST['name2'];
+						if($this->testName($name1) && $this->testName($name2)) {
+                $this->SetName($name1,$name2);
+                $this->SetStartGame(true);
+            //    return "<div id='start'>Namn: <b>". $this->GetName1()."-pip-". $this->GetName1(). "</b>". "<p><a href='?roll'>Kasta tärningen!</a></p>";
             } 
 						else {
 				    	session_destroy();
@@ -290,14 +316,37 @@ class CGameManager {
 		$getTotal = ($_SESSION['dice']);
 		return $getTotal->GetRollOFdice();
 	}
+	public function setName($name1,$name2) {
+		$diceHand1 = new CDiceHundred(1);
+		$diceHand2 = new CDiceHundred(1);
+		$diceHand1->SetName($name1);
+		$diceHand2->SetName($name2);
+		$_SESSION['dice1'] = $diceHand1;	
+		$_SESSION['dice2'] = $diceHand2;	
+	}
+/*
 	public function setName($name) {
 		$diceHand = new CDiceHundred(1);
 		$diceHand->SetName($name);
 		$_SESSION['dice'] = $diceHand;	
 	}
+*/
 	public function getName() {
+		$diceHand = new CDiceHundred(1);
 		$diceHand = ($_SESSION['dice']);
 		return $diceHand->GetName();
+	}
+	public function getName1() {
+		$diceHand = new CDiceHundred(1);
+//		$diceHand = ($_SESSION['dice1']);
+//		return $diceHand->GetName();
+		return "qq";
+	}
+	public function getName2() {
+    $diceHand = new CDiceHundred(1);
+		//$diceHand = ($_SESSION['dice2']);
+		//return $diceHand->GetName();
+		return "11";
 	}
 	public function setStartGame($startGame) {
 		if(isset($_SESSION['dice'])) 

@@ -4,6 +4,10 @@
 
 @import url(figure.css);
 
+a:link { text-decoration: none;color:green;}
+a:hover { text-decoration: underline;color:green;}
+a:visited { text-decoration: none;color:green;}
+
 body {
   color: #000000;
   font-family: arial, sans-serif;
@@ -108,4 +112,11 @@ h1 {
 
 .byline p {
   margin-top: 0;
+}
+/*
+	form
+*/
+textarea {
+  height:33%;  
+  width:33%;'
 }

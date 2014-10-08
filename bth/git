@@ -1,0 +1,20 @@
+git init
+git add bth
+git commit -m "dbwebb"
+git remote add origin git@github.com:frsd1/bth.git
+git push -f 
+
+
+
+http://jsfiddle.net/frsd/3bf1co8b/
+
+Tar bort allt i git lådan 
+git rm --cached -r bth
+
+gitignore för att slippa 
+*.*~
+
+ta bort en katalog
+git rm -r one-of-the-directories
+git commit -m "Remove duplicated directory"
+git push origin master

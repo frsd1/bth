@@ -1,0 +1,23 @@
+/**
+ * Style for forms
+ */
+label {
+  font-size: smaller;
+}
+
+input[type=text],
+input[type=password] {
+  font-size: 1.2em;
+  width: 500px;
+}
+
+input[type=submit],
+input[type=reset] {
+  font-size: 1.2em;
+}
+
+
+p.buttons {
+  padding-top: 19px;
+  padding-bottom: 19px;
+} 

@@ -195,6 +195,38 @@ ul.dice li.dice-6 { background-position:    0px 0px; }
  * Moment 2 - Dice 
  * 
  */
+#oneform {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #888888;
+	padding: 1em 1em 1em 1em;
+	margin: 1em 1em 1em 1em;
+	height:88px;
+    	width:300px;
+    	background-color: #6495ed;
+}
+
+/**
+ * Moment 2 - Dice 
+ * 
+ */
+#twoform {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 2px solid #888888;
+	padding: 1em 1em 1em 1em;
+	margin: 1em 1em 1em 1em;
+	height:108px;
+    	width:300px;
+    	background-color: #6495ed;
+}
+
+/**
+ * Moment 2 - Dice 
+ * 
+ */
 #start2 {
 	border-radius: 5px; 
 	-moz-border-radius: 5px; 
