@@ -1,4 +1,0 @@
-<!---
-<img class='left'  height="42" width="42" src='http://openclipart.org/image/300px/svg_to_png/12570/nicubunu_Game_baddie_Pirate.png alt='Bild på' . <?=$comment['name']?>/>
-<img class='left'src='<?='http://www.gravatar.com/avatar/' . md5(strtolower(trim($comment['mail']))) . '.jpg?s=80'; ?>' alt='Bild på' . <?=$comment['name']?>/>
---->
