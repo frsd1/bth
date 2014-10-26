@@ -1,0 +1,2 @@
+<img class='sitelogo' src='<?=$this->url->asset("img/mo.png")?>' alt='Anax Logo'/>
+
